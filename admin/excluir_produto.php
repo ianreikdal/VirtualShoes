@@ -1,5 +1,7 @@
 <?php
 include '../conexao.php';
+include 'protect.php';
+
 $id = intval($_GET['id']);
 $sql = "DELETE FROM produtos WHERE id_produto=$id";
 

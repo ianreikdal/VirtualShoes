@@ -1,3 +1,5 @@
+<?php include 'protect.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,6 +26,10 @@
         <div class="form-group">
             <label>Estoque</label>
             <input type="number" name="estoque" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label>Imagem</label>
+            <input type="file" name="imagem" class="form-control" accept="image/*" required>
         </div>
         <button type="submit" class="btn btn-success">Salvar</button>
         <a href="index.php" class="btn btn-secondary">Cancelar</a>

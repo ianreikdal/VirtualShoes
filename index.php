@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Minha Loja</title>
+    <title>VirtShoes</title>
     <!-- BOOTSTRAP 4 -->
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- FONT AWESOME -->
@@ -24,12 +24,15 @@
             <a href="carrinho.php" class="btn btn-primary">
                 <i class="bi bi-cart">Carrinho</i>
             </a>
+            <a href="login.php" class="btn btn-primary">
+                <i class="bi bi-person-plus">Login</i>
+            </a>
         </div>
         <div class="row">
             <!-- aqui vai o loop de produtos -->
         </div>
 
-        <h1 class="text-center mb-4"><i class="fas fa-store"></i> Minha Loja</h1>
+        <h1 class="text-center mb-4"><i class="fas fa-store"></i> VirtShoes</h1>
         <div class="row">
             <?php
             $sql = "SELECT * FROM produtos WHERE ativo = 1";
@@ -42,6 +45,7 @@
                         <div class="card h-100 shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title"><?= $row['nome'] ?></h5>
+                                <img src="<?= $row['imagem'] ?>" width="150">
                                 <p class="card-text">R$ <?= number_format($row['preco'], 2, ',', '.') ?></p>
                                 <a href="produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-primary btn-block">
                                     <i class="fas fa-info-circle"></i> Ver detalhes
@@ -56,5 +60,4 @@
         </div>
     </div>
 </body>
-
 </html>

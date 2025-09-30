@@ -28,6 +28,7 @@
                     <div class="card-body">
                         <h3 class="card-title"><?= $p['nome'] ?></h3>
                         <p class="card-text"><?= $p['descricao'] ?></p>
+                        <img src="<?= $p['imagem'] ?>" width="150">
                         <h4 class="text-success">R$ <?= number_format($p['preco'], 2, ',', '.') ?></h4>
                         <a href="carrinho.php?id=<?= $p['id_produto'] ?>" class="btn btn-success mt-3">
                             <i class="fas fa-cart-plus"></i> Adicionar ao carrinho

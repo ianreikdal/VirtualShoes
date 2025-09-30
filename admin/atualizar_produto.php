@@ -1,5 +1,6 @@
 <?php
 include '../conexao.php';
+include 'protect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id_produto'];
@@ -7,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
     $estoque = $_POST['estoque'];
+    
+    $imagem = $_FILES['imagem'];
 
     $sql = "UPDATE produtos SET nome=?, descricao=?, preco=?, estoque=? WHERE id_produto=?";
     $stmt = $conn->prepare($sql);

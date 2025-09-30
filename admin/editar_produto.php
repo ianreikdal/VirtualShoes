@@ -1,5 +1,7 @@
 <?php
 include '../conexao.php';
+include 'protect.php';
+
 $id = intval($_GET['id']);
 $sql = "SELECT * FROM produtos WHERE id_produto = $id";
 $result = $conn->query($sql);
@@ -34,6 +36,10 @@ $produto = $result->fetch_assoc();
             <div class="form-group">
                 <label>Estoque</label>
                 <input type="number" name="estoque" value="<?= $produto['estoque'] ?>" class="form-control" required>
+            </div>
+            <div class="form-group">
+            <label>Imagem</label>
+                <input type="file" name="imagem" class="form-control" accept="image/*" required>
             </div>
             <button type="submit" class="btn btn-primary">Atualizar</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>
