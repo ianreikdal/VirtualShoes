@@ -1,4 +1,7 @@
-<?php include 'conexao.php'; ?>
+<?php include 'conexao.php';
+session_start();
+$quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']) : 0; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,8 +24,15 @@
             <a href="admin/index.php" class="btn btn-dark">
                 <i class="fas fa-user-shield"></i> Admin
             </a>
-            <a href="carrinho.php" class="btn btn-primary">
-                <i class="bi bi-cart">Carrinho</i>
+            <a href="carrinho.php" class="btn btn-primary position-relative">
+    <i class="bi bi-cart"></i>
+    Carrinho
+    <?php if ($quantidadeCarrinho > 0): ?>
+        <span class="badge badge-danger position-absolute" style="top:0; right:0; transform:translate(50%,-50%);">
+            <?= $quantidadeCarrinho ?>
+        </span>
+    <?php endif; ?>
+</a>
             </a>
             <a href="login.php" class="btn btn-primary">
                 <i class="bi bi-person-plus">Login</i>

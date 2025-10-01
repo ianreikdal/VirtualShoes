@@ -19,7 +19,7 @@
             <i class="fas fa-sign-out-alt"></i> Sair
         </a>
         <a href="/index.php" class="btn btn-secondary mb-3 float-right">
-            <i class="fas fa-sign-out-alt"></i> Volar
+            <i class="fas fa-sign-out-alt"></i> Voltar
         </a>
 
 

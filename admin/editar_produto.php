@@ -19,7 +19,7 @@ $produto = $result->fetch_assoc();
 <body>
     <div class="container mt-4">
         <h1><i class="fas fa-edit"></i> Editar Produto</h1>
-        <form method="POST" action="atualizar_produto.php">
+        <form method="POST" action="atualizar_produto.php" enctype="multipart/form-data">
             <input type="hidden" name="id_produto" value="<?= $produto['id_produto'] ?>">
             <div class="form-group">
                 <label>Nome</label>
