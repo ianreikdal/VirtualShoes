@@ -17,6 +17,11 @@ $quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .card-body {
+        text-align: center;
+    }
+</style>
 
 <body>
     <div class="container mt-4">
@@ -25,14 +30,14 @@ $quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']
                 <i class="fas fa-user-shield"></i> Admin
             </a>
             <a href="carrinho.php" class="btn btn-primary position-relative">
-    <i class="bi bi-cart"></i>
-    Carrinho
-    <?php if ($quantidadeCarrinho > 0): ?>
-        <span class="badge badge-danger position-absolute" style="top:0; right:0; transform:translate(50%,-50%);">
-            <?= $quantidadeCarrinho ?>
-        </span>
-    <?php endif; ?>
-</a>
+                <i class="bi bi-cart"></i>
+                Carrinho
+                <?php if ($quantidadeCarrinho > 0): ?>
+                    <span class="badge badge-danger position-absolute" style="top:0; right:0; transform:translate(50%,-50%);">
+                        <?= $quantidadeCarrinho ?>
+                    </span>
+                <?php endif; ?>
+            </a>
             </a>
             <a href="login.php" class="btn btn-primary">
                 <i class="bi bi-person-plus">Login</i>
@@ -56,7 +61,7 @@ $quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']
                             <div class="card-body">
                                 <h5 class="card-title"><?= $row['nome'] ?></h5>
                                 <img src="<?= $row['imagem'] ?>" width="150">
-                                <p class="card-text">R$ <?= number_format($row['preco'], 2, ',', '.') ?></p>
+                                <p style="" class="card-text">R$ <?= number_format($row['preco'], 2, ',', '.') ?></p>
                                 <a href="produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-primary btn-block">
                                     <i class="fas fa-info-circle"></i> Ver detalhes
                                 </a>
@@ -70,4 +75,5 @@ $quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']
         </div>
     </div>
 </body>
+
 </html>
