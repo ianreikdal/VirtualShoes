@@ -14,6 +14,7 @@ $produto = $result->fetch_assoc();
     <meta charset="UTF-8">
     <title>Editar Produto</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_admin.css">
 </head>
 
 <body>
@@ -38,8 +39,16 @@ $produto = $result->fetch_assoc();
                 <input type="number" name="estoque" value="<?= $produto['estoque'] ?>" class="form-control" required>
             </div>
             <div class="form-group">
-            <label>Imagem</label>
-                <input type="file" name="imagem" class="form-control" accept="image/*" required>
+                <label>Imagem atual</label><br>
+                <?php if (!empty($produto['imagem'])): ?>
+                    <img src="../<?= $produto['imagem'] ?>" class="img-thumbnail mb-2" width="150">
+                <?php else: ?>
+                    <span class="text-muted">Nenhuma imagem cadastrada.</span>
+                <?php endif; ?>
+            </div>
+            <div class="form-group">
+                <label>Nova imagem</label>
+                <input type="file" name="imagem" class="form-control-file" accept="image/*">
             </div>
             <button type="submit" class="btn btn-primary">Atualizar</button>
             <a href="index.php" class="btn btn-secondary">Cancelar</a>

@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css1.css">
 </head>
 <body>
 <div class="container mt-5" style="max-width: 400px;">
@@ -38,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="senha" class="form-control" required>
     </div>
     <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+        <p class="mt-3">Já tem conta? <a href="login.php">Faça login</a></p>
 </form>
 </div>
 </body>

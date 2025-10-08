@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <style>
+        body {
+            background-color: #f0f0f0
+        }
+    </style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
@@ -41,7 +46,7 @@
         <div class="alert alert-danger">Produto não encontrado.</div>
     <?php endif; ?>
 
-    <a href="index.php" class="btn btn-secondary mt-3"><i class="fas fa-arrow-left"></i> Voltar</a>
+    <a href="index.php" class="btn btn-secondary mt-3"><i class="bi bi-arrow-left-circle-fill"></i> Voltar</a>
 </div>
 </body>
 </html>

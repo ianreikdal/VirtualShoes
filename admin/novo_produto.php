@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Novo Produto</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_admin.css">
+
 </head>
 <body>
 <div class="container mt-4">

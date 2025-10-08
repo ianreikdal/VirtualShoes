@@ -12,16 +12,15 @@
     <body>
     <div class="container mt-4">
         <h1><i class="fas fa-box"></i> Produtos</h1>
-        <a href="novo_produto.php" class="btn btn-success mb-3">
+        <a href="novo_produto.php" class="btn  mb-3 btn-success">
             <i class="fas fa-plus"></i> Novo Produto
         </a>
-        <a href="logout.php" class="btn btn-danger mb-3 float-right">
+        <a href="logout.php" class="btn mb-3 float-right btn-danger">
             <i class="fas fa-sign-out-alt"></i> Sair
         </a>
         <a href="/index.php" class="btn btn-secondary mb-3 float-right">
             <i class="fas fa-sign-out-alt"></i> Voltar
         </a>
-
 
         <table class="table table-bordered table-striped">
             <thead class="thead-dark">
@@ -46,10 +45,10 @@
                     <td>R$ <?= number_format($row['preco'], 2, ',', '.') ?></td>
                     <td><?= $row['estoque'] ?></td>
                     <td>
-                        <a href="editar_produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-warning btn-sm">
+                        <a href="editar_produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-sm btn-warning">
                             <i class="fas fa-edit"></i> Editar
                         </a>
-                        <a href="excluir_produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">
+                        <a href="excluir_produto.php?id=<?= $row['id_produto'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">
                             <i class="fas fa-trash"></i> Excluir
                         </a>
                     </td>

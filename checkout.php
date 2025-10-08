@@ -28,6 +28,8 @@ if (isset($_POST['finalizar'])) {
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="css/css1.css">
+
 </head>
 <body>
 <div class="container mt-4">
