@@ -29,6 +29,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body {
+            background-image: url('../img/fundo_login.png');
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     <meta charset="utf-8">
     <title>Login Admin</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">

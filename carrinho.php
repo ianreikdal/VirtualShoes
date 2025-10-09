@@ -1,6 +1,12 @@
 <?php
-session_start();
 include 'conexao.php';
+session_start();
+$quantidadeCarrinho = isset($_SESSION['carrinho']) ? count($_SESSION['carrinho']) : 0;
+$usuarioLogado = isset($_SESSION['usuario']);
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit;
+}
 
 // Se o usuário clicou em "adicionar ao carrinho"
 if (isset($_GET['id'])) {
@@ -13,7 +19,13 @@ if (isset($_GET['id'])) {
     } else {
         $_SESSION['carrinho'][$id] = 1;
     }
+    // Define mensagem de sucesso
+    $_SESSION['msg_carrinho'] = "Produto adicionado ao carrinho!";
+    // Redireciona para o index
+    header("Location: index.php");
+    exit;
 }
+
 
 // Se o usuário clicou para remover um item
 if (isset($_GET['remover'])) {
@@ -37,6 +49,45 @@ if (isset($_GET['remover'])) {
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #00BFFF;">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="index.php">
+                <i class="fas fa-store"></i> VirtShoes
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.php">Início</a>
+                    </li>
+                    <?php if ($usuarioLogado): ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="logout.php">
+                                <i class="bi bi-box-arrow-right"></i> Sair
+                            </a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="login.php">
+                                <i class="bi bi-person-circle"></i> Login
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="admin/index.php">
+                            <i class="fas fa-user-shield"></i> Admin
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container mt-4">
         <h1><i class="fas fa-shopping-cart"></i> Meu Carrinho</h1>
 
@@ -48,7 +99,7 @@ if (isset($_GET['remover'])) {
                         <th>Preço</th>
                         <th>Quantidade</th>
                         <th>Total</th>
-                        <th>Ações</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,8 +118,10 @@ if (isset($_GET['remover'])) {
                             <td><?= $qtd ?></td>
                             <td>R$ <?= number_format($subtotal, 2, ',', '.') ?></td>
                             <td>
-                                <a href="carrinho.php?remover=<?= $id ?>" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
+                                <a href="carrinho.php?remover=<?= $id ?>"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Tem certeza que deseja remover este item do carrinho?')">
+                                    <i class="fas fa-trash"></i> 
                                 </a>
                             </td>
                         </tr>

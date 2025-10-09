@@ -18,6 +18,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <style>
+        body {
+            background-color: #00BFFF !important;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     <title>Cadastro</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="css/css1.css">
@@ -38,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Senha</label>
         <input type="password" name="senha" class="form-control" required>
     </div>
-    <button type="submit" class="btn btn-success btn-block">Cadastrar</button>
+    <button type="submit" class="btn btn-dark btn-block">Cadastrar</button>
         <p class="mt-3">Já tem conta? <a href="login.php">Faça login</a></p>
 </form>
 </div>
