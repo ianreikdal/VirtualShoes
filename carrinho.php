@@ -121,7 +121,7 @@ if (isset($_GET['remover'])) {
                                 <a href="carrinho.php?remover=<?= $id ?>"
                                     class="btn btn-danger btn-sm"
                                     onclick="return confirm('Tem certeza que deseja remover este item do carrinho?')">
-                                    <i class="fas fa-trash"></i> 
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>

@@ -5,10 +5,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $conn->real_escape_string($_POST['nome']);
     $email = $conn->real_escape_string($_POST['email']);
     $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
+    $endereco = $conn->real_escape_string($_POST['endereco']);
+    $cidade = $conn->real_escape_string($_POST['cidade']);
+    $estado = $conn->real_escape_string($_POST['estado']);
+    $cep = $conn->real_escape_string($_POST['cep']);
 
-    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+    $sql = "INSERT INTO usuarios (nome, email, senha, endereco, cidade, estado, cep) VALUES ('$nome', '$email', '$senha', '$endereco', '$cidade', '$estado', '$cep')";
     if ($conn->query($sql) === TRUE) {
-        echo "Cadastro realizado com sucesso! <a href='login.php'>Faça login</a>";
+        header("Location: index.php");
         exit;
     } else {
         echo "Erro: " . $conn->error;
@@ -49,6 +53,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Senha</label>
         <input type="password" name="senha" class="form-control" required>
     </div>
+    <div class="form-group">
+        <label>Endereço</label>
+        <input type="text" name="endereco" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Cidade</label>
+        <input type="text" name="cidade" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Estado</label>
+        <input type="text" name="estado" class="form-control" required>
+    </div>
+        <div class="form-group">
+            <label>CEP</label>
+            <input type="text" name="cep" class="form-control" required>
+        </div>
     <button type="submit" class="btn btn-dark btn-block">Cadastrar</button>
         <p class="mt-3">Já tem conta? <a href="login.php">Faça login</a></p>
 </form>

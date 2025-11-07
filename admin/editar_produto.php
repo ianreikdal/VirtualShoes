@@ -15,6 +15,19 @@ $produto = $result->fetch_assoc();
     <title>Editar Produto</title>
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="css/css_admin.css">
+    <style>
+        body {
+            background-color: #00BFFF !important;
+
+        }
+
+        .mt-4 {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>

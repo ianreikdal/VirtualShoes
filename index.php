@@ -65,6 +65,53 @@ if (isset($_SESSION['msg_carrinho'])) {
     body {
       padding-top: 80px;
     }
+    /* Estilo do rodapé */
+    footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+      color: #6c757d;
+    }
+        /* Footer personalizado */
+    .site-footer {
+      background: #f8f9fa;
+      border-top: 1px solid #e9ecef;
+      padding: 40px 0 20px;
+      color: #6c757d;
+      margin-top: 40px;
+    }
+    .site-footer a { color: #495057; }
+    .site-footer a:hover { color: #00BFFF; text-decoration: none; }
+    .site-footer .footer-title {
+      font-weight: 700;
+      color: #343a40;
+      margin-bottom: 12px;
+    }
+    .site-footer .social a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #495057;
+      font-size: 18px;
+    }
+    .site-footer .social a:hover { color: #00BFFF; }
+    .site-footer .newsletter input[type="email"]{
+      max-width: 320px;
+      display: inline-block;
+    }
+    .site-footer .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 2000;
+      display: none;
+    }
+    @media (max-width: 575.98px) {
+      .site-footer .newsletter-form { text-align: left; }
+    }
   </style>
 
   <meta charset="UTF-8">
@@ -264,5 +311,75 @@ if (isset($_SESSION['msg_carrinho'])) {
   </script>
 
 </body>
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5 class="footer-title"><i class="fas fa-store"></i> VirtShoes</h5>
+        <p>Loja especializada em calçados com as melhores marcas. Atendimento rápido e frete ágil.</p>
+        <p class="mb-0"><strong>Endereço:</strong> Rua Exemplo, 123 - Cidade</p>
+        <p><strong>Telefone:</strong> (11) 99999-9999</p>
+      </div>
 
+      <div class="col-md-3 mb-3">
+        <h6 class="footer-title">Navegação</h6>
+        <ul class="list-unstyled">
+          <li><a href="index.php">Início</a></li>
+          <li><a href="produto.php">Produtos</a></li>
+          <li><a href="carrinho.php">Carrinho</a></li>
+          <li><a href="login.php">Minha conta</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <h6 class="footer-title">Suporte</h6>
+        <ul class="list-unstyled">
+          <li><a href="#">Perguntas frequentes</a></li>
+          <li><a href="#">Política de trocas</a></li>
+          <li><a href="#">Termos e Condições</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mb-3">
+        <h6 class="footer-title">Siga-nos</h6>
+        <div class="social mb-2">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <h6 class="footer-title">Newsletter</h6>
+        <form class="newsletter-form" action="#" method="post" onsubmit="alert('Obrigado! Inscrição recebida.'); return false;">
+          <div class="form-group mb-0">
+            <input type="email" name="email" class="form-control form-control-sm" placeholder="Seu email" required>
+            <button type="submit" class="btn btn-primary btn-sm mt-2">Inscrever</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <small class="mb-2 mb-md-0">© <?= date('Y') ?> VirtShoes. Todos os direitos reservados.</small>
+      <div>
+        <a href="#" class="mr-3">Política de Privacidade</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary back-to-top" id="backToTop" title="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+<script>
+  // Mostrar botão "back to top" ao rolar
+  const backBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) backBtn.style.display = 'block';
+    else backBtn.style.display = 'none';
+  });
+  backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
 </html>

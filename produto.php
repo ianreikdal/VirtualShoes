@@ -1,4 +1,13 @@
-<?php include 'conexao.php'; ?>
+<?php
+include 'conexao.php';
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['usuario'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,7 +19,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <style>
         body {
-            background-color: #f0f0f0
+            background-color: #00BFFF !important;
         }
     </style>
 
