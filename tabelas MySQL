@@ -36,6 +36,9 @@ CREATE TABLE produtos (
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
 
+
+INSERT INTO admins (usuario, senha)
+VALUES ('admin', '$2y$10$eH9wQx0bXrEoP4XSTnF4AOKyY6eEboUmY6MS3XxRnRwK2GgG3x8xW');
 -- Tabela: usuarios
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
